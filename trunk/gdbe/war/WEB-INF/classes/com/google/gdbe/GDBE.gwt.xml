@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<module rename-to="gdocs_base_editor">
+	<!-- Inherit the core Web Toolkit stuff.                        -->
+	<inherits name="com.google.gwt.user.User"/>
+	
+	<!-- Other module inherits                                      -->
+    <inherits name="com.google.gwt.widgetideas.GlassPanel"/>
+	<!-- Specify the app entry point class.                         -->
+	<entry-point class="com.google.gdbe.client.GDBE"/>
+</module>
