@@ -1,4 +1,5 @@
-#summary Click the image below to visit the live version of GDBE.
+#summary Live demo of the latest GDBE.
 #labels Featured
+Click the image below to visit the live version of GDBE.
 
 <a href="http://gdocs-base-editor.appspot.com"><img src="http://gdbe.googlecode.com/svn/trunk/resources/gdbe-screen.png" border="2px" border="1px" /></a>
