@@ -1,6 +1,4 @@
 #summary One-sentence summary of this page.
 #labels Featured
 
-= Live Version (AppEngine) =
-
 <a href="http://gdocs-base-editor.appspot.com"><img src="http://gdbe.googlecode.com/svn/trunk/resources/gdbe-screen.png" border="2px" border="1px" /></a>
