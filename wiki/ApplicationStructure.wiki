@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary The program structure and organization.
 #labels Featured
 
 <img src="http://gdbe.googlecode.com/svn/trunk/resources/gdbe-structure.png" border="2px" border="1px" />
