@@ -1,4 +1,6 @@
 #summary The program structure and organization.
 #labels Featured
 
+GDBE uses a well defined MVC design for simplicity. The following diagram displays the relevant GDBE components and how they interact with each other.
+
 <img src="http://gdbe.googlecode.com/svn/trunk/resources/gdbe-structure.png" border="2px" border="1px" />
