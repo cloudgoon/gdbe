@@ -1,19 +1,21 @@
-#summary Instructions for setting up and configuring GDBE on the AppEngine.
+#summary Instructions for setting up and configuring GDBE on the App Engine.
 
 == Before you start ==
 
-  # Sign up for an AppEngine account (free) and create an AppEngine application for hosting GDBE.
+  # Sign up for an App Engine account (free) and create an App Engine application for hosting GDBE.
   # Download and install <a href="http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/galileo/SR1/eclipse-jee-galileo-SR1-win32.zip">Eclipse</a>, along with the <a href="http://code.google.com/eclipse/">Google Plugin</a>.
   # Download and extract the latest version of GDBE from the <a href="http://code.google.com/p/gdbe/downloads/list">downloads section</a>.
 
-== Open GDBE in Eclipse ==
+== Opening GDBE in Eclipse ==
   # In Eclipse, from the *File* menu, click *Import*. From the Import window select *General* > *Existing Projects into Workspace* and click *Next*. <a href="">Screenshot</a>
   # Select the GDBE project folder that was downloaded and extracted. Click *Finish*. <a href="">Screenshot</a>
 
-== Configure the GDBE Project in Eclipse ==
+== Configuring the GDBE Project in Eclipse ==
   # From the Package Explorer right-click the *gdocs-base-editor* project and select *Google* > *App Engine Settings...*.
   # In the App Engine configuration window specify values for *Application ID* and *Version* matching the name and version of the App Engine application into which to deploy GDBE. <a href="">Screenshot</a>
 
-== Run GDBE locally in Hosted mode ==
+== Running GDBE locally in Hosted mode ==
   # With the *gdocs-base-editor* project selected in the *Package Explorer*, from the *Run* menu select *Run As* > *Web Application*. <a href="">Screenshot</a>
   # In the *HTML Page Selection* window select *gdbe-splash.html* and click *OK*. <a href="">Screenshot</a>
+
+== Deploying GDBE to the App Engine ==
