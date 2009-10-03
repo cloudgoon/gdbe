@@ -1,0 +1,14 @@
+#summary Instructions for setting up and configuring GDBE on the AppEngine.
+
+== Before you start ==
+
+  # Sign up for an AppEngine account (free) and create an AppEngine application for hosting GDBE.
+  # Download and install <a href="http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/galileo/SR1/eclipse-jee-galileo-SR1-win32.zip">Eclipse</a>, along with the <a href="http://code.google.com/eclipse/">Google Plugin</a>.
+  # Download and extract the latest version of GDBE from the <a href="http://code.google.com/p/gdbe/downloads/list">downloads section</a>.
+
+== Open GDBE in Eclipse ==
+  # In Eclipse, from the *File* menu, click *Import*. From the Import window select *Existing Projects into Workspace* and click *Next*. [<a href="">Screenshot</a>]
+  # Select the GDBE project folder that was downloaded and extracted. Click *Finish*.
+
+== Configure the GDBE Project in Eclipse ==
+  #
