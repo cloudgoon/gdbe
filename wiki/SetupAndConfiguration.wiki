@@ -7,7 +7,7 @@
   # Download and extract the latest version of GDBE from the <a href="http://code.google.com/p/gdbe/downloads/list">downloads section</a>.
 
 == Open GDBE in Eclipse ==
-  # In Eclipse, from the *File* menu, click *Import*. From the Import window select *Existing Projects into Workspace* and click *Next*. [<a href="">Screenshot</a>]
+  # In Eclipse, from the *File* menu, click *Import*. From the Import window select *Existing Projects into Workspace* and click *Next*. <a href="">Screenshot</a>
   # Select the GDBE project folder that was downloaded and extracted. Click *Finish*.
 
 == Configure the GDBE Project in Eclipse ==
