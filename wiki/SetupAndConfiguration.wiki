@@ -17,5 +17,8 @@
 == Running GDBE locally in Hosted mode ==
   # With the *gdocs-base-editor* project selected in the *Package Explorer*, from the *Run* menu select *Run As* > *Web Application*. <a href="">Screenshot</a>
   # In the *HTML Page Selection* window select *gdbe-splash.html* and click *OK*. <a href="">Screenshot</a>
+  * Note: There's a <a href="http://code.google.com/p/google-web-toolkit/issues/detail?id=2962">known issue</a> in Ubuntu with GWT Hosted Mode and SSL. Because GDBE uses AuhSub authentication, which involves redirecting the user to an authorization page over SSL, you may experience this issue. You can still run the application locally by opening the URL in the hosted browser (http://localhost:8080) in a separate browser instance, though this will bypass GWT hosted mode.
 
 == Deploying GDBE to the App Engine ==
+  # From the Package Explorer right-click the *gdocs-base-editor* project and select *Google* > *Deploy to App Engine*.
+  # In the deployment window provide your App Engine login details and click *Deploy*. <a href="">Screenshot</a>
