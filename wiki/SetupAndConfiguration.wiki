@@ -15,4 +15,5 @@
   # In the App Engine configuration window specify values for *Application ID* and *Version* matching the name and version of the App Engine application into which to deploy GDBE. <a href="">Screenshot</a>
 
 == Run GDBE locally in Hosted mode ==
-  # With the *gdocs-base-editor* project selected in the *Package Explorer* 
+  # With the *gdocs-base-editor* project selected in the *Package Explorer*, from the *Run* menu select *Run As* > *Web Application*. <a href="">Screenshot</a>
+  # In the *HTML Page Selection* window select *gdbe-splash.html* and click *OK*. <a href="">Screenshot</a>
