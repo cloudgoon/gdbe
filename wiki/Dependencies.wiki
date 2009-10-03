@@ -1,0 +1,7 @@
+#summary Project dependencies.
+
+The following libraries and SDKs are used in GDBE and are required for building the project:
+  * GWT SDK 1.7.0
+  * AppEngine SDK 1.2.2
+  * GData-Java-Client 1.36.0
+  * GWT-Incubator-july-14-2009
