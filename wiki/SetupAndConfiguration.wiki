@@ -1,4 +1,5 @@
 #summary Instructions for setting up and configuring GDBE on the App Engine.
+#labels Featured
 
 === Before you start ===
 
