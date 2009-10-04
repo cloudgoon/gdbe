@@ -7,7 +7,7 @@
   # Download and extract the latest version of GDBE from the <a href="http://code.google.com/p/gdbe/downloads/list">downloads section</a>.
 
 === Opening GDBE in Eclipse ===
-  # In Eclipse, from the *File* menu, click *Import*. From the Import window select *General* > *Existing Projects into Workspace* and click *Next*. <br /><img src="http://gdbe.googlecode.com/svn/trunk/documentation/images/ImportExistingProject.png" height="100px" />
+  # In Eclipse, from the *File* menu, click *Import*. From the Import window select *General* > *Existing Projects into Workspace* and click *Next*. <br /><img src="http://gdbe.googlecode.com/svn/trunk/documentation/images/ImportExistingProject.png" />
   # Select the GDBE project folder that was downloaded and extracted. Click *Finish*.<br /><img src="http://gdbe.googlecode.com/svn/trunk/documentation/images/ImportExistingProject-Select.png" />
 
 === Configuring the GDBE Project in Eclipse ===
@@ -15,7 +15,7 @@
   # In the App Engine configuration window specify values for *Application ID* and *Version* matching the name and version of the App Engine application into which to deploy GDBE.<br /><img src="http://gdbe.googlecode.com/svn/trunk/documentation/images/ConfigureProject-AppEngine.png" />
 
 === Running GDBE locally in Hosted mode ===
-  # With the *gdocs-base-editor* project selected in the *Package Explorer*, from the *Run* menu select *Run As* > *Web Application*.<br /><img src="http://gdbe.googlecode.com/svn/trunk/documentation/images/RunProject-HostedMode.png" width="200px" />
+  # With the *gdocs-base-editor* project selected in the *Package Explorer*, from the *Run* menu select *Run As* > *Web Application*.<br /><img src="http://gdbe.googlecode.com/svn/trunk/documentation/images/RunProject-HostedMode.png" />
   # In the *HTML Page Selection* window select *gdbe-splash.html* and click *OK*.<br /><img src="http://gdbe.googlecode.com/svn/trunk/documentation/images/RunProject-HostedMode-PageSelection.png" />
   * Note: There's a <a href="http://code.google.com/p/google-web-toolkit/issues/detail?id=2962">known issue</a> in Ubuntu with GWT Hosted Mode and SSL. Because GDBE uses AuhSub authentication, which involves redirecting the user to an authorization page over SSL, you may experience this issue. You can still run the application locally by opening the hosted mode URL (typically http://localhost:8080) in a separate browser instance, though this will bypass GWT hosted mode.
 
