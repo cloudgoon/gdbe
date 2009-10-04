@@ -4,7 +4,7 @@
 === Before you start ===
 
   # Sign up for an App Engine account (free) and create an App Engine application for hosting GDBE.
-  # Download and install <a href="http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/galileo/SR1/eclipse-jee-galileo-SR1-win32.zip">Eclipse</a>, along with the <a src="http://code.google.com/eclipse/">Google Plugin</a>.
+  # Download and install <a href="http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/galileo/SR1/eclipse-jee-galileo-SR1-win32.zip">Eclipse</a>, along with the <a href="http://code.google.com/eclipse/">Google Plugin</a>.
   # Download and extract the latest version of GDBE from the <a href="http://code.google.com/p/gdbe/downloads/list">downloads section</a>.
 
 === Opening GDBE in Eclipse ===
