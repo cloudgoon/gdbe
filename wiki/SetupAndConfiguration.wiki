@@ -22,4 +22,4 @@
 
 === Deploying GDBE to the App Engine ===
   # From the Package Explorer right-click the *gdocs-base-editor* project and select *Google* > *Deploy to App Engine*.
-  # In the deployment window provide your App Engine login details and click *Deploy*.<br /><br /><img href="http://gdbe.googlecode.com/svn/trunk/documentation/images/DeployProject-AppEngine.png" /><br /><br />
+  # In the deployment window provide your App Engine login details and click *Deploy*.<br /><br /><img src="http://gdbe.googlecode.com/svn/trunk/documentation/images/DeployProject-AppEngine.png" /><br /><br />
