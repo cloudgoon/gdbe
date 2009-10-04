@@ -3,7 +3,7 @@
 
 GDBE uses a well defined MVC design for simplicity. The following diagram displays the relevant GDBE components and how they interact with each other.
 
-<img src="http://gdbe.googlecode.com/svn/trunk/resources/gdbe-structure.png" border="2px" border="1px" />
+<img src="http://gdbe.googlecode.com/svn/trunk/documentation/images/gdbe-structure.png" border="2px" border="1px" />
 
 The application is broken down into distinct client (GWT) and server (AppEngine) components. The server component exposes a subset of the GData functionality to the client and is responsible for retrieving and storing authentication tokens.
 
