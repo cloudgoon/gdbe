@@ -18,7 +18,7 @@
 
 === Running GDBE locally in Hosted mode ===
   # With the *gdocs-base-editor* project selected in the *Package Explorer*, from the *Run* menu select *Run As* > *Web Application*.
-<img src="http://gdbe.googlecode.com/svn/trunk/documentation/images/RunProject-HostedMode.png" />
+<img src="http://gdbe.googlecode.com/svn/trunk/documentation/images/RunProject-HostedMode.png" width="200px" />
   # In the *HTML Page Selection* window select *gdbe-splash.html* and click *OK*.
 <img src="http://gdbe.googlecode.com/svn/trunk/documentation/images/RunProject-HostedMode-PageSelection.png" />
   * Note: There's a <a href="http://code.google.com/p/google-web-toolkit/issues/detail?id=2962">known issue</a> in Ubuntu with GWT Hosted Mode and SSL. Because GDBE uses AuhSub authentication, which involves redirecting the user to an authorization page over SSL, you may experience this issue. You can still run the application locally by opening the hosted mode URL (typically http://localhost:8080) in a separate browser instance, though this will bypass GWT hosted mode.
