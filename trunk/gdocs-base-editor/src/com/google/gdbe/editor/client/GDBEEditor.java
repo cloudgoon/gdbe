@@ -272,13 +272,12 @@ public class GDBEEditor implements EntryPoint, CommandEventListener {
           if (document.isStored()) {
             showStatus("Renaming...", false);
             gdataService.renameDocument(document.getDocumentId(), newTitle,
-                new AsyncCallback<Boolean>(){
+                new AsyncCallback<DocumentReference>(){
               public void onFailure(Throwable caught) {
                 handleError(caught, e, null, 0);
               }
-              public void onSuccess(Boolean result) {
-                document.setTitle(newTitle);
-                setDocument(document);
+              public void onSuccess(DocumentReference result) {
+                setDocument(result);
                 clearStatus();
               }
             });

@@ -50,10 +50,10 @@ public interface GDataService extends RemoteService {
    * 
    * @param documentId the document Id
    * @param newTitle the new document title
-   * @return whether the rename was successful
+   * @return the updated document
    * @throws GDataServiceException
    */
-  boolean renameDocument(String documentId, String newTitle) throws GDataServiceException;
+  DocumentReference renameDocument(String documentId, String newTitle) throws GDataServiceException;
   
   /**
    * Deletes a document.

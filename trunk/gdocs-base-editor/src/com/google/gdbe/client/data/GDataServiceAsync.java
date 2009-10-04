@@ -47,7 +47,7 @@ public interface GDataServiceAsync {
    * @param newTitle the new document title
    * @param callback the success/failure handler
    */
-  void renameDocument(String documentId, String newTitle, AsyncCallback<Boolean> callback);
+  void renameDocument(String documentId, String newTitle, AsyncCallback<DocumentReference> callback);
   
   /**
    * Deletes a document.

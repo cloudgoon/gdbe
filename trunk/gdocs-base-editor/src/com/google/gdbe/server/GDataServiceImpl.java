@@ -140,15 +140,15 @@ public class GDataServiceImpl extends RemoteServiceServlet implements
    * @param callback the success/failure handler
    * @throws GDataServiceException
    */
-  public boolean renameDocument(String documentId, String newTitle) throws GDataServiceException {
+  public DocumentReference renameDocument(String documentId, String newTitle) throws GDataServiceException {
     DocumentListEntry entry = getDocumentEntry(documentId);
     try {
       entry.setTitle(new PlainTextConstruct(newTitle));
       entry.update();
+      return getDocument(documentId);
     } catch (Exception e) {
       throw new GDataServiceException(e.getMessage());
     }
-    return true;
   }
   
   /**
