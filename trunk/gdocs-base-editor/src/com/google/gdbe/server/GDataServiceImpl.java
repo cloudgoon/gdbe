@@ -36,14 +36,13 @@ public class GDataServiceImpl extends RemoteServiceServlet implements
 
   public static final String GDATA_CLIENT_APPLICATION_NAME = "gdbe-1.0";
   public static final String LOGOUT_RETURN_RELATIVE_PATH = "/";
-  public static final String DOCS_SCOPE = "http://docs.google.com/feeds/";
+  public static final String DOCS_SCOPE = "https://docs.google.com/feeds/";
   
   
   /**
    * Retrieves a document by Id.
    * 
    * @param documentId the document Id
-   * @param callback the success/failure handler
    * @throws GDataServiceException
    */
   public DocumentReference getDocument(String documentId) throws GDataServiceException {
@@ -53,8 +52,6 @@ public class GDataServiceImpl extends RemoteServiceServlet implements
   
   /**
    * Retrieves a new, unsaved, document.
-   * 
-   * @param callback the success/failure handler
    */
   public DocumentReference getNewDocument() {
     UserService userService = UserServiceFactory.getUserService();
@@ -69,7 +66,6 @@ public class GDataServiceImpl extends RemoteServiceServlet implements
    * Retrieves the contents of a document by resource Id.
    * 
    * @param resourceId the resource Id
-   * @param callback the success/failure handler
    * @throws GDataServiceException
    */
   public String getDocumentContents(String resourceId) throws GDataServiceException {
@@ -113,7 +109,6 @@ public class GDataServiceImpl extends RemoteServiceServlet implements
    * @param documentId the document Id
    * @param etag the document's version tag
    * @param contents the document contents
-   * @param callback the success/failure handler
    * @throws GDataServiceException 
    */
   public boolean setDocumentContents(String documentId, String etag, String contents) throws GDataServiceException {
@@ -137,7 +132,6 @@ public class GDataServiceImpl extends RemoteServiceServlet implements
    * 
    * @param documentId the document Id
    * @param newTitle the new document title
-   * @param callback the success/failure handler
    * @throws GDataServiceException
    */
   public DocumentReference renameDocument(String documentId, String newTitle) throws GDataServiceException {
@@ -156,7 +150,6 @@ public class GDataServiceImpl extends RemoteServiceServlet implements
    * 
    * @param documentId the document Id
    * @param etag the document's version tag
-   * @param callback the success/failure handler
    * @throws GDataServiceException
    */
   public boolean deleteDocument(String documentId, String etag) throws GDataServiceException {
@@ -178,7 +171,6 @@ public class GDataServiceImpl extends RemoteServiceServlet implements
    * 
    * @param document the document Id
    * @param starred whether the document is starred
-   * @param callback the success/failure handler
    * @throws GDataServiceException
    */
   public boolean setDocumentStarred(String documentId, boolean starred) throws GDataServiceException {
@@ -197,7 +189,6 @@ public class GDataServiceImpl extends RemoteServiceServlet implements
    * 
    * @param title the document's title
    * @param contents the document's contents
-   * @param callback the success/failure handler
    * @throws GDataServiceException
    */
   public DocumentReference createDocument(String title, String contents) throws GDataServiceException {
@@ -226,7 +217,6 @@ public class GDataServiceImpl extends RemoteServiceServlet implements
    * @param etag the document's etag
    * @param title the document's title
    * @param contents the document's contents
-   * @param callback the success/failure handler
    * @throws GDataServiceException
    */
   public DocumentReference saveDocument(String documentId, String etag, String title,
@@ -243,7 +233,6 @@ public class GDataServiceImpl extends RemoteServiceServlet implements
    * Retrieves a list of a documents.
    * 
    * @param starredOnly whether to return only starred documents.
-   * @param callback the success/failure handler
    * @throws GDataServiceException
    */
   public DocumentReference[] getDocuments(boolean starredOnly) throws GDataServiceException {
@@ -265,8 +254,6 @@ public class GDataServiceImpl extends RemoteServiceServlet implements
   
   /**
    * Retrieves the currently signed on user.
-   * 
-   * @param callback the success/failure handler
    */
   public String getUser() {
     UserService userService = UserServiceFactory.getUserService();
@@ -283,7 +270,6 @@ public class GDataServiceImpl extends RemoteServiceServlet implements
   /**
    * Ends the current user's session
    * 
-   * @param callback the success/failure handler
    * @throws GDataServiceException
    */
   public String logout() throws GDataServiceException {
@@ -394,6 +380,7 @@ public class GDataServiceImpl extends RemoteServiceServlet implements
   private DocsService getDocsService(AuthenticationToken token) {
     DocsService svc = new DocsService(GDATA_CLIENT_APPLICATION_NAME);
     svc.setConnectTimeout(0);
+    svc.setReadTimeout(0);
     svc.setAuthSubToken(token.getToken());
     return svc;
   }

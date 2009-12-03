@@ -1,7 +1,10 @@
 package com.google.gdbe.server.auth;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.security.GeneralSecurityException;
+import java.util.Enumeration;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -72,8 +75,7 @@ public class Authentication extends HttpServlet {
           try {
             token = AuthSubUtil.exchangeForSessionToken(token, null);
             AuthenticationToken.storeUserToken(req.getUserPrincipal().getName(), token);
-            // remove the token from the url
-            resp.sendRedirect(req.getRequestURI());
+            resp.sendRedirect(getFullUrl(req));
           } catch (AuthenticationException e) {
             e.printStackTrace();
           } catch (GeneralSecurityException e) {
@@ -81,17 +83,49 @@ public class Authentication extends HttpServlet {
           }
         } else {
           String authUrl = AuthSubUtil.getRequestUrl(
-              req.getRequestURL().toString(),
+              getFullUrl(req),
               GDataServiceImpl.DOCS_SCOPE, false, true);
           resp.sendRedirect(authUrl);
         }
       }
     } else {
       if (!passive) {
-        String authUrl = userService.createLoginURL(req.getRequestURI());
+        String authUrl = userService.createLoginURL(getFullUrl(req));
         resp.sendRedirect(authUrl);
       }
     }
     return null;
+  }
+  
+  /**
+   * Obtains the full URL for the current request, eliminating
+   * the token parameter, if it is present. The token removal isn't
+   * required but helps protect the user from by minimizing its
+   * visibility.
+   * 
+   * @param req
+   * @return
+   */
+  @SuppressWarnings("unchecked")
+  private static String getFullUrl(HttpServletRequest req) {
+    String url = req.getRequestURL().toString();
+    String qs = "";
+    Enumeration<String> pars = req.getParameterNames();
+    while(pars.hasMoreElements()) {
+      String name = pars.nextElement();
+      if (!name.equals("token")) {
+        String value = req.getParameter(name);
+        if (value != null) {
+          try {
+            qs += name + "=" + URLEncoder.encode(value, "UTF-8") + "&";
+          } catch (UnsupportedEncodingException e) {
+          }
+        }
+      }
+    }
+    if (!qs.equals("")) {
+      url += "?" + qs;
+    }
+    return url;
   }
 }
