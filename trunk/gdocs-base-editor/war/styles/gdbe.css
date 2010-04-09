@@ -1,0 +1,548 @@
+/*Element Styles*/
+a, a:visited, a:hover {
+	color: #0000AA;
+}
+/** Tools Panel */
+.gdbe-Tools-Panel{
+	background-image: url(/images/background-tb.png);
+	background-position: 0px 0px;
+	padding: 3px;
+}
+.gdbe-Toolbar {
+	background-image: url(/images/background-tb.png);
+	background-repeat: repeat-x;
+	background-color: #E5E5E5;
+}
+.gdbe-Toolbar * {
+	display:-moz-inline-stack;
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+}
+.gdbe-Toolbar .separator {
+	margin-left: 2px;
+	margin-right: 2px;
+}
+.gdbe-Toolbar .gwt-PushButton {
+	background-image: none;
+	margin-left: 1px;
+	padding: 5px;
+}
+.gdbe-Toolbar .gwt-PushButton-up{
+	border: 0px;
+	padding: 5px;
+}
+.gdbe-Toolbar .gwt-PushButton-up-hovering{
+	border: solid 1px #A1BADF;
+	padding: 4px;
+}
+.gdbe-Toolbar .gwt-PushButton-down-hovering{
+	border: solid 1px #A1BADF;
+	background-color: #DDE1EB;
+	padding: 4px;
+}
+.gdbe-Toolbar .gwt-ToggleButton{
+	background-image: none;
+	margin-left: 1px;
+	padding: 5px;
+}
+.gdbe-Toolbar .gwt-ToggleButton-up{
+	border: 0px;
+	padding: 5px;
+}
+.gdbe-Toolbar .gwt-ToggleButton-down{
+	border: solid 1px #63A6E7;
+	padding: 4px;
+	background-color: #D6E3F7
+}
+.gdbe-Toolbar .gwt-ToggleButton-up-hovering{
+	border: solid 1px #A1BADF;
+	padding: 4px;
+}
+.gdbe-Toolbar .gwt-ToggleButton-down-hovering{
+	border: solid 1px #A1BADF;
+	background-color: #DDE1EB;
+	padding: 4px;
+}
+/** Main Menu Panel */
+.gdbe-Menu-Panel{
+	border-top: solid 2px #BDCFFF;
+	background-color: #E7EBFF;
+	padding-left: 4px;
+}
+.gdbe-Menu-Panel .gwt-MenuBar{
+}
+.gdbe-Menu-Panel .gwt-MenuBar TABLE{
+	border-collapse: collapse;
+}
+.gdbe-Menu-Panel .gwt-MenuBar-horizontal{
+	border: 0px;
+	background-color: #E7EBFF;
+	background-image: none;
+}
+.gdbe-Menu-Panel .gwt-MenuBar-horizontal .gwt-MenuItem{
+	font-family: Arial;
+	font-weight: normal;
+	font-size: 12px;
+	color: #333333;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 6px;
+	padding-bottom: 7px;
+	white-space: nowrap;
+}
+.gdbe-Menu-Panel .gwt-MenuBar-horizontal .gwt-MenuItem-selected{
+	background-color: #638AEF;
+	color: #FFFFFF;
+}
+/*******************************************************************/
+/***** Popup & Vertical Menu Item Styles (common to all menus) *****/
+/*******************************************************************/
+.gwt-MenuBar-vertical{
+	border-top: solid 1px #CECFCE;
+	border-left: solid 1px #CECFCE;
+	border-right: solid 1px #636563;
+	border-bottom: solid 1px #636563;
+}
+.gwt-MenuBar-vertical .gwt-MenuItemSeparator{
+}
+.gwt-MenuBar-vertical .gwt-MenuItemSeparator .menuSeparatorInner{
+	height: 1px;
+	padding: 0px;
+	border: 0px;
+	background: #CECFCE;
+	overflow: hidden;
+}
+.gwt-MenuBar-vertical .gwt-MenuItem{
+	font-family: Arial;
+	font-weight: normal;
+	font-size: 12px;
+	color: #333333;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	padding-left: 6px;
+	width: 210px;
+	white-space: nowrap;
+}
+.gwt-MenuBar-vertical .gwt-MenuItem IMG {
+	margin-right: 2px;
+	vertical-align: text-bottom;
+}
+.gwt-MenuBar-vertical .gwt-MenuItem-selected{
+	background-color: #D6EBFF;
+}
+.gwt-MenuBarPopup {
+}
+.gwt-MenuBarPopup .menuPopupTopCenter {
+	display: none;
+}
+.gwt-MenuBarPopup .menuPopupBottomCenter {
+	display: none;
+}
+.gwt-MenuBarPopup .menuPopupMiddleLeft {
+	display: none;
+}
+.gwt-MenuBarPopup .menuPopupMiddleRight {
+	display: none;
+}
+.gwt-MenuBarPopup .menuPopupTopLeftInner {
+	display: none;
+}
+.gwt-MenuBarPopup .menuPopupTopRightInner {
+	display: none;
+}
+.gwt-MenuBarPopup .menuPopupBottomLeftInner {
+	display: none;
+}
+.gwt-MenuBarPopup .menuPopupBottomRightInner {
+	display: none;
+}
+.gwt-MenuBarPopup .menuPopupTopLeft {
+	display: none;
+}
+.gwt-MenuBarPopup .menuPopupTopRight {
+	display: none;
+}
+.gwt-MenuBarPopup .menuPopupBottomLeft {
+	display: none;
+}
+.gwt-MenuBarPopup .menuPopupBottomRight {
+	display: none;
+}
+/*******************************************************************/
+/***** Popup & Vertical Menu Item Styles (common to all menus) *****/
+/*******************************************************************/
+.gwt-DialogBox {
+	border: solid 1px #3A5774;
+}
+.gwt-DialogBox .Caption {
+	border: 0px;
+	overflow: hidden;
+	height: 8px;
+	background-color: #C1D9FF;
+}
+.gwt-DialogBox .Header {
+	background-color: #E0EDFE;
+}
+.gwt-DialogBox .Header .CloseButton {
+	padding: 8px;
+	border: 0px;
+	cursor: pointer;
+}
+.gwt-DialogBox .Header .Title {
+	font-family: Arial;
+	font-weight: bold;
+	padding: 8px;
+}
+.gwt-DialogBox .SubHeader {
+	padding: 2px;
+	padding-left: 4px;
+	padding-right: 4px;
+	background-color: #F7FBFF;
+	border-bottom: solid 1px #C6DBFF;
+	font-size: 11px;
+}
+.gwt-DialogBox .Content {
+	padding: 8px;
+	font-family: Arial;
+	font-size: 12px;
+}
+.gwt-DialogBox .Content * {
+	font-family: Arial;
+	font-size: 12px;
+}
+.gwt-DialogBox .dialogMiddleCenter {
+	padding: 0px;
+}
+.gwt-DialogBox .dialogTopCenter {
+	diaply: none;	
+}
+.gwt-DialogBox .dialogBottomCenter,
+.gwt-DialogBox .dialogMiddleLeft,
+.gwt-DialogBox .dialogMiddleRight,
+.gwt-DialogBox .dialogTopLeftInner,
+.gwt-DialogBox .dialogTopRightInner,
+.gwt-DialogBox .dialogBottomLeftInner,
+.gwt-DialogBox .dialogBottomRightInner,
+.gwt-DialogBox .dialogTopLeft,
+.gwt-DialogBox .dialogTopRight,
+.gwt-DialogBox .dialogBottomLeft,
+.gwt-DialogBox .dialogBottomRight
+{
+	width: 8px;
+	height: 8px;
+	background-color: #C1D9FF;
+}
+.gwt-DialogBox .dialogTopCenterInner {
+	height: 8px;
+	background-color: #C1D9FF;
+}
+/*******************************************************************/
+/************************** TabBar Styles **************************/
+/*******************************************************************/
+.gwt-TabBar {
+	padding-top: 6px;
+	background-color: #F7FBFF;
+}
+.gwt-TabBar .gwt-TabBarFirst {
+	width: 10px;
+}
+.gwt-TabBar .gwt-TabBarFirst-wrapper {
+	border-bottom: solid 1px #C6DBFF;
+}
+.gwt-TabBar .gwt-TabBarRest {
+}
+.gwt-TabBar .gwt-TabBarRest-wrapper {
+	border-bottom: solid 1px #C6DBFF;
+}
+.gwt-TabBar .gwt-TabBarItem {
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 11px;
+	background-color: #F7FBFF;
+	border: solid 1px #F7FBFF;
+	border-bottom: 0px;
+	padding: 4px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: 0px;
+}
+.gwt-TabBar .gwt-TabBarItem-wrapper {
+	border-bottom: solid 1px #C6DBFF;
+}
+.gwt-TabBar .gwt-TabBarItem-selected {
+	background-color: #FFFFFF;
+	padding: 4px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border: solid 1px #C6DBFF;
+	border-bottom: 0px;
+}
+.gwt-TabBar .gwt-TabBarItem-wrapper-selected {
+	padding-left: 0px;
+	border-bottom: solid 1px #FFFFFF;
+}
+/*******************************************************************/
+/* About Dialog */
+.gdbe-About{
+	padding: 10px;
+}
+.gdbe-About-Caption {
+	padding-top: 10px;
+	font-family: Arial;
+	font-size: 11px;
+}
+/* Text Editor Panel */
+.gdbe-Text-Editor {
+}
+.gdbe-Text-Editor textarea {
+	width: 100%;
+}
+/* Explorer Panel */
+.gdbe-Explorer{
+	font-family: Arial;
+	font-size: 12px;
+	padding-left:40px;
+	padding-top: 20px;
+}
+.gdbe-Header-Status{
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	z-index: 2;
+}
+.gdbe-Header-Status div{
+	display: inline;
+	padding: 4px;
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;
+	background-color: #FFF1A8;
+}
+.gdbe-Explorer-Documents{
+	font-family: Arial;
+	font-size: 12px;
+	padding-left: 20px;
+	overflow: scroll;
+}
+.gdbe-Explorer-Links *{
+	font-family: Arial;
+	font-size: 12px;
+}
+.gdbe-Explorer-Document a{
+	font-family: Arial;
+	font-size: 12px;
+}
+.gdbe-Explorer-Document-Info{
+	font-family: Arial;
+	font-size: 10px !important;
+	color: #999999;
+}
+.gdbe-Explorer-Document-Folder{
+	font-family: Arial;
+	font-size: 10px !important;
+	background-color: #F1F5EC;
+	color: #006633;	
+	padding: 2px;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+.gwt-ToggleButton{
+	padding: 0px;
+	border: 0px;
+}
+/** Header */
+.gdbe-Header-Logo{
+	margin: 2px;
+	margin-left: 10px;
+}
+.gdbe-Header-Links{
+	padding: 4px;
+	border-bottom: solid 1px #C9D7F1;
+}
+.gdbe-Header-Links div{
+	padding-right: 6px;
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;
+	white-space: nowrap;
+}
+.gdbe-Header-Links a{
+	padding: 0px;
+	padding-left: 6px;
+	padding-right: 6px;
+	font-family: Arial;
+	font-size: 12px;
+	white-space: nowrap;
+}
+/** Title Panel */
+a.gdbe-Header-Title{
+	margin-right: 10px;
+	padding: 4px;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 15px;
+	color: #000000;
+	cursor: pointer;
+	text-decoration: none;
+}
+a.gdbe-Header-Title:hover{
+	margin-right: 10px;
+	padding: 4px;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 15px;
+	color: #000000;
+	cursor: pointer;
+	background-color: #FFFFD6;
+	text-decoration: none;
+}
+.gdbe-Header-Info {
+	font-family: Arial;
+	font-size: 11px;
+	color: #666666;
+}
+.gdbe-Header-Info a{
+	color: #112ABB;
+	text-decoration: none;	
+}
+.gdbe-Header-Info a:hover{
+	color: #112ABB;
+	text-decoration: underline;
+}
+.gdbe-Header-Actions{
+	padding-top: 4px;
+	padding-right: 10px;
+}
+.gdbe-Header-Actions .gwt-MenuBar TABLE{
+	border-collapse: collapse;
+}
+.gdbe-Header-Actions .gwt-MenuBar-horizontal{
+	border: 0px;
+	background-color: #FFFFFF;
+	background-image: none;
+}
+.gdbe-Header-Actions .gwt-MenuBar-horizontal .gwt-MenuItemSeparator{
+	width: 3px;	
+}
+.gdbe-Header-Actions .gwt-MenuBar-horizontal .gwt-MenuItem{
+	font-family: Arial;
+	font-weight: normal;
+	font-size: 12px;
+	color: #333333;
+	border: 0px;
+	background-image: url(/images/background.png);
+	background-position: 0px -94px;
+	border: solid 1px #A1BADF;
+	padding: 2px;
+	padding-left: 16px;
+	padding-right: 16px;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.gdbe-Header-Actions .gwt-MenuBar-horizontal .gdbe-HighlightedMenuItem{
+	font-family: Arial;
+	font-weight: normal;
+	font-size: 12px;
+	color: #333333;
+	border: 0px;
+	background-image: url(/images/background.png);
+	background-position: 0px 0px;
+	border: solid 1px #4477BB;
+	padding: 2px;
+	padding-left: 16px;
+	padding-right: 16px;
+	color: #FFFFFF;
+	font-weight: bold;
+	cursor: pointer;
+}
+.gdbe-Header-Actions .gwt-MenuBar-horizontal .gwt-MenuItem-selected{
+	background-color: #FFFFFF;
+}
+.gdbe-Header-Actions .gwt-MenuBar-horizontal .gdbe-HighlightedMenuItem-selected{
+	background-position: 0px -48px;
+}
+.gwt-HorizontalSplitPanel {
+}
+.gwt-HorizontalSplitPanel .hsplitter {
+	cursor: move;
+	border: 0px;
+	border-left: solid 4px #BDCFFF;
+	cursor: e-resize;
+	cursor: col-resize;
+}
+.gwt-HorizontalSplitPanel .hsplitter img{
+	display: none;
+}
+.gwt-VerticalSplitPanel {
+}
+.gwt-VerticalSplitPanel .vsplitter {
+	background-color: #D6E3F7;
+ 	cursor: move;
+	border: 0px;
+	border-top: solid 4px #BDCFFF;
+	cursor: s-resize;
+	cursor: row-resize;
+}
+.gwt-VerticalSplitPanel .vsplitter img{
+	display: none;
+}
+/* Tree */
+.gwt-Tree .gwt-TreeItem {
+  font-size: 12px;
+  padding: 1px 0px;
+  margin: 0px;
+  white-space: nowrap;
+  cursor: hand;
+  cursor: pointer;
+}
+.gwt-Tree .gwt-TreeItem * {
+	font-size: 12px;
+}
+.gwt-Tree .gwt-TreeItem-selected {
+}
+.gwt-TreeItem .gwt-RadioButton input,
+.gwt-TreeItem .gwt-CheckBox input {
+	margin-left: 0px;
+}
+.gwt-Tree .gwt-TreeItem .identifier {
+	font-family: Arial;
+	font-size: 10px;
+	background-color: #F1F5EC;
+	color: #006633;	
+	padding: 2px;
+	padding-left: 6px;
+	padding-right: 6px;
+	display: inline;
+	margin-left: 36px;
+}
+.gdbe-Text-Editor {
+	padding-top: 4px;
+	padding-left: 10px;
+	white-space: normal;
+}
+.gdbe-Text-Editor-NoWrap {
+	padding-top: 4px;
+	padding-left: 10px;
+	overflow-x: scroll;
+	white-space: nowrap;
+}
+.CodeMirror-line-numbers {
+	font-family: monospace;
+	font-size: 13px;
+	color: #2B91AF;
+	text-align: right;
+	padding-left: 20px;
+	padding-right: 2px;
+	padding-top: 2px;
+	border-right: dotted 1px #CCCCCC;
+	margin-right: 4px;
+}
+.gwt-HorizontalSplitPanel left {
+	padding: 0px;
+	overflow: hidden;
+}
+.gwt-HorizontalSplitPanel right {
+	padding: 0px;
+	overflow: hidden;
+}
