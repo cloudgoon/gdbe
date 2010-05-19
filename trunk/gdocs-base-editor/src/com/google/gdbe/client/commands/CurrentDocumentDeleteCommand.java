@@ -6,11 +6,9 @@ package com.google.gdbe.client.commands;
 public class CurrentDocumentDeleteCommand extends Command {
 
   public final static int serialUid = 3;
-  
+
   /**
    * Creates a new command instance.
-   * 
-   * @param description the command description
    */
   public CurrentDocumentDeleteCommand() {
 	super("Delete current document.");

@@ -8,11 +8,9 @@ public class SystemOpenPageCommand extends Command {
   public final static int serialUid = 105;
   
   private String name, url;
-  
+
   /**
    * Creates a new command instance.
-   * 
-   * @param description the command description
    */
   public SystemOpenPageCommand(String name, String url) {
 	super("Open a webpage.");

@@ -9,8 +9,6 @@ public class ExistingDocumentOpenCommand extends Command {
   
   /**
    * Creates a new command instance.
-   * 
-   * @param description the command description
    */
   public ExistingDocumentOpenCommand() {
 	super("Open existing document.");

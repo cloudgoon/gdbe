@@ -6,11 +6,9 @@ package com.google.gdbe.client.commands;
 public class SystemToggleLineNumbersCommand extends Command {
 
   public final static int serialUid = 101;
-  
+
   /**
    * Creates a new command instance.
-   * 
-   * @param description the command description
    */
   public SystemToggleLineNumbersCommand() {
 	super("Update \"Show Line Numbers\" setting.");

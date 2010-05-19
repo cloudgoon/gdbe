@@ -6,11 +6,9 @@ package com.google.gdbe.client.commands;
 public class NewDocumentLoadCommand extends Command {
 
   public final static int serialUid = 22;
-  
+
   /**
    * Creates a new command instance.
-   * 
-   * @param description the command description
    */
   public NewDocumentLoadCommand() {
 	super("Load new document.");

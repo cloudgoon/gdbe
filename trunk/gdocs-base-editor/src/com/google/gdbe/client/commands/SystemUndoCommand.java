@@ -6,11 +6,9 @@ package com.google.gdbe.client.commands;
 public class SystemUndoCommand extends Command {
 
   public final static int serialUid = 87;
-  
+
   /**
    * Creates a new command instance.
-   * 
-   * @param description the command description
    */
   public SystemUndoCommand() {
 	super("Undo action.");

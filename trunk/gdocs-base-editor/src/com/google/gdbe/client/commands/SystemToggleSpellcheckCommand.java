@@ -6,11 +6,9 @@ package com.google.gdbe.client.commands;
 public class SystemToggleSpellcheckCommand extends Command {
 
   public final static int serialUid = 111;
-  
+
   /**
    * Creates a new command instance.
-   * 
-   * @param description the command description
    */
   public SystemToggleSpellcheckCommand() {
 	super("Update \"Use spellchecker\" setting.");

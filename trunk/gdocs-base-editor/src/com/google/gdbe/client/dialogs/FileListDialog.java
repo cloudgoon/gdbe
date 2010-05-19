@@ -100,10 +100,9 @@ public class FileListDialog extends Dialog {
     refreshLink.addClickHandler(new ClickHandler() {
 		@Override
 		public void onClick(ClickEvent event) {
-		  rightPanel.clear();
-		  CommandEvent.fire(FileListDialog.this, new FileDialogListDocumentsCommand(false));
 		  event.preventDefault();
 		  event.stopPropagation();
+		  loadEntries(false);
 		}
     });
     Anchor newDocumentLink = new Anchor("New Document", "/docs", "_blank");
@@ -139,10 +138,10 @@ public class FileListDialog extends Dialog {
   /**
    * Requests a document list refresh by firing the appropriate command event.
    */
-  private void loadEntries() {
+  private void loadEntries(boolean useCache) {
     documentsPanel.clear();
-    documentsPanel.add(new Label("Loading..."));
-    CommandEvent.fire(this, new FileDialogListDocumentsCommand(true));
+    rightPanel.setStylePrimaryName("gdbe-Loading");
+    CommandEvent.fire(this, new FileDialogListDocumentsCommand(useCache));
   }
   
   /**
@@ -173,7 +172,7 @@ public class FileListDialog extends Dialog {
     super.show();
     resize();
     if (entries == null) {
-      loadEntries();
+      loadEntries(true);
     }
   }
   
@@ -181,6 +180,8 @@ public class FileListDialog extends Dialog {
    * Displays the entries according to the selected view.
    */
   public void showEntries() {
+	rightPanel.clear();
+	rightPanel.setStyleName("");
 	switch(tabs.getSelectedTab()) {
 	  case 0:
 		showQuickView();
@@ -242,7 +243,9 @@ public class FileListDialog extends Dialog {
       Anchor link = new Anchor();
       link.setText(entry.getTitle());
       link.setTarget("_blank");
-      link.setHref("/docs?docid=" + entry.getDocumentId());
+      if (entry.getType().equalsIgnoreCase("document")) {
+        link.setHref("/docs?docid=" + entry.getDocumentId());
+      }
       ToggleButton star = new ToggleButton(
           Icons.editorIcons.StarEmpty().createImage(),
           Icons.editorIcons.StarFull().createImage());

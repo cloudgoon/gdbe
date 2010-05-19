@@ -6,11 +6,9 @@ package com.google.gdbe.client.commands;
 public class SystemRedoCommand extends Command {
 
   public final static int serialUid = 86;
-  
+
   /**
    * Creates a new command instance.
-   * 
-   * @param description the command description
    */
   public SystemRedoCommand() {
 	super("Redo action.");

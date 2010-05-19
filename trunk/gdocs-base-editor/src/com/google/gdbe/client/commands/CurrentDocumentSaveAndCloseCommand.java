@@ -6,11 +6,9 @@ package com.google.gdbe.client.commands;
 public class CurrentDocumentSaveAndCloseCommand extends Command {
 
   public final static int serialUid = 6;
-  
+
   /**
    * Creates a new command instance.
-   * 
-   * @param description the command description
    */
   public CurrentDocumentSaveAndCloseCommand() {
 	super("Save and close current document.");

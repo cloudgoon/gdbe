@@ -8,11 +8,9 @@ public class ExistingDocumentLoadCommand extends Command {
   public final static int serialUid = 15;
   
   private String documentId;
-  
+
   /**
    * Creates a new command instance.
-   * 
-   * @param description the command description
    */
   public ExistingDocumentLoadCommand(String documentId) {
 	super("Load existing document.");

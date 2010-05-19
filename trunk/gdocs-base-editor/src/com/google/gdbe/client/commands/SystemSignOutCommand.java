@@ -8,12 +8,10 @@ public class SystemSignOutCommand extends Command {
   public final static int serialUid = 24;
   
   private String returnUrl;
-  
+
   /**
    * Creates a new command instance.
-   * 
-   * @param description the command description
-   */  
+   */
   public SystemSignOutCommand(String returnUrl) {
 	super("Sign out.");
 	this.returnUrl = returnUrl;

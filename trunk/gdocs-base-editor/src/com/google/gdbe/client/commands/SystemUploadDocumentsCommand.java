@@ -6,11 +6,9 @@ package com.google.gdbe.client.commands;
 public class SystemUploadDocumentsCommand extends Command {
 
   public final static int serialUid = 97;
-  
+
   /**
    * Creates a new command instance.
-   * 
-   * @param description the command description
    */
   public SystemUploadDocumentsCommand() {
 	super("Upload documents to your Google Docs account.");
