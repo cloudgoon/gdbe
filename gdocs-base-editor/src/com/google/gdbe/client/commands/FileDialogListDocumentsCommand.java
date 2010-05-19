@@ -8,11 +8,9 @@ public class FileDialogListDocumentsCommand extends Command {
   public final static int serialUid = 34;
   
   private boolean useCache = true;
-  
+
   /**
    * Creates a new command instance.
-   * 
-   * @param description the command description
    */
   public FileDialogListDocumentsCommand(boolean useCache) {
     super("List documents.");

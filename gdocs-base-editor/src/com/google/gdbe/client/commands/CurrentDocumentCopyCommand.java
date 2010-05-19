@@ -9,8 +9,6 @@ public class CurrentDocumentCopyCommand extends Command {
   
   /**
    * Creates a new command instance.
-   * 
-   * @param description the command description
    */
   public CurrentDocumentCopyCommand() {
 	super("Save current document as new copy.");

@@ -6,11 +6,9 @@ package com.google.gdbe.client.commands;
 public class SystemToggleWrapTextCommand extends Command {
 
   public final static int serialUid = 100;
-  
+
   /**
    * Creates a new command instance.
-   * 
-   * @param description the command description
    */
   public SystemToggleWrapTextCommand() {
 	super("Update \"Wrap Text\" setting.");

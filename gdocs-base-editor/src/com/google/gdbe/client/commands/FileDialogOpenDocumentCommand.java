@@ -8,11 +8,9 @@ public class FileDialogOpenDocumentCommand extends Command {
   public final static int serialUid = 35;
   
   private String documentId;
-  
+
   /**
    * Creates a new command instance.
-   * 
-   * @param description the command description
    */
   public FileDialogOpenDocumentCommand(String documentId) {
     super("Open document.");

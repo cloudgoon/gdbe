@@ -38,7 +38,7 @@ import java.util.List;
 public class DocumentServiceImpl extends RemoteServiceServlet implements
     DocumentService {
 
-  public static final String GDATA_CLIENT_APPLICATION_NAME = "gdbe-1.2";
+  public static final String GDATA_CLIENT_APPLICATION_NAME = "gdbe-1.3";
   public static final String LOGOUT_RETURN_RELATIVE_PATH = "/";
   public static final String DOCS_SCOPE = "https://docs.google.com/feeds/";
   public static final String AUTH_SCOPES = DOCS_SCOPE + " https://docs.googleusercontent.com";

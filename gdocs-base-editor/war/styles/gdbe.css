@@ -2,6 +2,9 @@
 a, a:visited, a:hover {
 	color: #0000AA;
 }
+textarea {
+	border: 0px;	
+}
 /** Tools Panel */
 .gdbe-Tools-Panel{
 	background-image: url(/images/background-tb.png);
@@ -526,6 +529,11 @@ a.gdbe-Header-Title:hover{
 	padding-left: 10px;
 	overflow-x: scroll;
 	white-space: nowrap;
+}
+.gdbe-Loading {
+	background-image: url(/images/loading.png);
+	background-repeat: no-repeat;
+	background-position: 20px 20px;
 }
 .CodeMirror-line-numbers {
 	font-family: monospace;

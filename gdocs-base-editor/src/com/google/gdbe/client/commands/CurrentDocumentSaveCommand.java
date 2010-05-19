@@ -6,11 +6,9 @@ package com.google.gdbe.client.commands;
 public class CurrentDocumentSaveCommand extends Command {
 
   public final static int serialUid = 7;
-  
+
   /**
    * Creates a new command instance.
-   * 
-   * @param description the command description
    */
   public CurrentDocumentSaveCommand() {
 	super("Save current document.");

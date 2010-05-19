@@ -6,11 +6,9 @@ package com.google.gdbe.client.commands;
 public class SystemToggleFullScreenCommand extends Command {
 
   public final static int serialUid = 10;
-  
+
   /**
    * Creates a new command instance.
-   * 
-   * @param description the command description
    */
   public SystemToggleFullScreenCommand() {
 	super("Display editor in full screen view.");

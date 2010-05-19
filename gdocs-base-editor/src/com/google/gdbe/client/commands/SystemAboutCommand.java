@@ -6,11 +6,9 @@ package com.google.gdbe.client.commands;
 public class SystemAboutCommand extends Command {
 
   public final static int serialUid = 12;
-  
+
   /**
    * Creates a new command instance.
-   * 
-   * @param description the command description
    */
   public SystemAboutCommand() {
 	super("About Cloudie.");

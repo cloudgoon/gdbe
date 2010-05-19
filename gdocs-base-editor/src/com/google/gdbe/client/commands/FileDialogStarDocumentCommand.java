@@ -8,11 +8,9 @@ public class FileDialogStarDocumentCommand extends Command {
   public final static int serialUid = 32;
   
   private String documentId;
-  
+
   /**
    * Creates a new command instance.
-   * 
-   * @param description the command description
    */
   public FileDialogStarDocumentCommand(String documentId) {
     super("Unstar document.");

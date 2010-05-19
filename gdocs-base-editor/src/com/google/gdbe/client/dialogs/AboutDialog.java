@@ -44,7 +44,7 @@ public class AboutDialog extends Dialog {
     content.setHorizontalAlignment(VerticalPanel.ALIGN_CENTER);
     content.add(logo);
     content.setSize("500px", "100px");
-    HTML l1 = new HTML("&copy; 2010 GDBE Project (1.2). Licensed under the Apache License, Version 2.0.");
+    HTML l1 = new HTML("&copy; 2010 GDBE Project (1.3). Licensed under the Apache License, Version 2.0.");
     l1.setStylePrimaryName("gdbe-About-Caption");
     content.add(l1);
     setContentWidget(content);

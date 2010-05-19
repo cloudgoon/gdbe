@@ -6,11 +6,9 @@ package com.google.gdbe.client.commands;
 public class FileDialogOpenFolderCommand extends Command{
 
   public final static int serialUid = 35;
-  
+
   /**
    * Creates a new command instance.
-   * 
-   * @param description the command description
    */
   public FileDialogOpenFolderCommand() {
     super("Open document.");

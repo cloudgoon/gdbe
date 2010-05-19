@@ -9,8 +9,6 @@ public class CurrentDocumentRenameCommand extends Command {
   
   /**
    * Creates a new command instance.
-   * 
-   * @param description the command description
    */
   public CurrentDocumentRenameCommand() {
 	super("Rename current document.");

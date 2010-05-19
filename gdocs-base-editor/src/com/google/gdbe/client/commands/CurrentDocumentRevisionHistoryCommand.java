@@ -6,11 +6,9 @@ package com.google.gdbe.client.commands;
 public class CurrentDocumentRevisionHistoryCommand extends Command {
 
   public final static int serialUid = 11;
-  
+
   /**
    * Creates a new command instance.
-   * 
-   * @param description the command description
    */
   public CurrentDocumentRevisionHistoryCommand() {
 	super("View revision history.");

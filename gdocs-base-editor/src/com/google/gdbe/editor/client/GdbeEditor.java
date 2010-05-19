@@ -4,6 +4,7 @@ import com.google.gdbe.client.commands.Command;
 import com.google.gdbe.client.commands.CurrentDocumentCopyCommand;
 import com.google.gdbe.client.commands.CurrentDocumentDeleteCommand;
 import com.google.gdbe.client.commands.CurrentDocumentLoadContentsCommand;
+import com.google.gdbe.client.commands.CurrentDocumentRefreshCommand;
 import com.google.gdbe.client.commands.CurrentDocumentRenameCommand;
 import com.google.gdbe.client.commands.CurrentDocumentRevisionHistoryCommand;
 import com.google.gdbe.client.commands.CurrentDocumentSaveAndCloseCommand;
@@ -52,6 +53,8 @@ import com.google.gwt.event.dom.client.KeyDownHandler;
 import com.google.gwt.event.dom.client.LoadEvent;
 import com.google.gwt.event.dom.client.LoadHandler;
 import com.google.gwt.user.client.Event;
+import com.google.gwt.user.client.History;
+import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.AbsolutePanel;
@@ -92,6 +95,7 @@ public class GdbeEditor implements EntryPoint, CommandHandler {
    * Closes the current window.
    */
   private native void close() /*-{
+  	$wnd.open('', '_self', '');//for chrome
     $wnd.close();
   }-*/;
   
@@ -181,7 +185,7 @@ public class GdbeEditor implements EntryPoint, CommandHandler {
             handleError(caught, cmd, null, 0);
           }
           public void onSuccess(DocumentServiceEntry result) {
-            setDocument(result);
+            setDocument(result, true);
             clearStatus();
           }
         });
@@ -194,7 +198,7 @@ public class GdbeEditor implements EntryPoint, CommandHandler {
             handleError(caught, cmd, null, 0);
           }
           public void onSuccess(DocumentServiceEntry result) {
-            setDocument(result);
+            setDocument(result, false);
             clearStatus();
             close();
           }
@@ -211,13 +215,13 @@ public class GdbeEditor implements EntryPoint, CommandHandler {
                 handleError(caught, cmd, null, 0);
               }
               public void onSuccess(DocumentServiceEntry result) {
-                setDocument(result);
+                setDocument(result, true);
                 clearStatus();
               }
             });
           } else {
             currentDocument.setTitle(newName);
-            setDocument(currentDocument);
+            setDocument(currentDocument, false);
           }
         }
         break;
@@ -225,7 +229,7 @@ public class GdbeEditor implements EntryPoint, CommandHandler {
         if (Window.confirm("This document will be deleted and closed.")) {
           if (currentDocument.isStored()) {
             showStatus("Deleting document...", true);
-            docService.deleteDocument(currentDocument.getDocumentId(), currentDocument.getEtag(),
+            docService.deleteDocument(currentDocument.getDocumentId(), "*",
                   new AsyncCallback<Boolean>() {
               public void onFailure(Throwable caught) {
                 handleError(caught, cmd, null, 0);
@@ -253,6 +257,28 @@ public class GdbeEditor implements EntryPoint, CommandHandler {
           }
         });
         break;
+      case CurrentDocumentRefreshCommand.serialUid:
+      	final CurrentDocumentRefreshCommand cdrCmd = (CurrentDocumentRefreshCommand) cmd;
+          if (!cdrCmd.isExecuteInBackground()) {
+      	    showStatus("Obtaining document metadata...", true);
+          }
+          docService.getDocument(currentDocument.getDocumentId(), new AsyncCallback<DocumentServiceEntry>() {
+            public void onFailure(Throwable caught) {
+          	  if (!cdrCmd.isExecuteInBackground()) {
+                handleError(caught, cmd, null, 1);
+          	  }
+            }
+            public void onSuccess(DocumentServiceEntry result) {
+              setDocument(result, false);
+              if (!cdrCmd.isExecuteInBackground()) {
+                clearStatus();
+              }
+              if (cdrCmd.getContinueCommand() != null) {
+                execute(cdrCmd.getContinueCommand());
+              }
+            }
+          });
+      	break;
       case CurrentDocumentRevisionHistoryCommand.serialUid:
         Window.open("http://docs.google.com/Revs?id=" +
             currentDocument.getDocumentId() + "&tab=revlist",
@@ -270,7 +296,7 @@ public class GdbeEditor implements EntryPoint, CommandHandler {
 			}
 			@Override
 			public void onSuccess(DocumentServiceEntry result) {
-		      setDocument(result);
+		      setDocument(result, false);
 		      loadEditor("Hello GDBE!!");
 		    }
     	});
@@ -286,7 +312,7 @@ public class GdbeEditor implements EntryPoint, CommandHandler {
         	if (result == null) {
         	  handleError(new Exception("No document found with the ID " + edlCmd.getDocumentId()), cmd, new NewDocumentLoadCommand(), 0);
         	} else {
-              setDocument(result);
+              setDocument(result, false);
               clearStatus();
               execute(new CurrentDocumentLoadContentsCommand());
         	}
@@ -395,6 +421,12 @@ public class GdbeEditor implements EntryPoint, CommandHandler {
   public void loadDocument() {
     String documentId = Window.Location.getParameter("docid");
     if (documentId == null || documentId.equals("")) {
+      documentId = Window.Location.getHash();
+      if (documentId != null && documentId.startsWith("#")) {
+    	documentId = documentId.substring(1);
+      }
+    }
+    if (documentId == null || documentId.equals("")) {
       execute(new NewDocumentLoadCommand());
     } else {
       execute(new ExistingDocumentLoadCommand(documentId));
@@ -451,19 +483,39 @@ public class GdbeEditor implements EntryPoint, CommandHandler {
 		}
 	});
   }
-  
+
   /**
    * Sets the currently open document and updates the header info and window title
    * with the respective document information.
    * 
    * @param doc the document which to use
+   * @param requireNewEtag whether a new Etag is expected for the specified document
    */
-  private void setDocument(DocumentServiceEntry doc) {
+  private void setDocument(DocumentServiceEntry doc, boolean requireNewEtag) {
+	boolean wasStored = (currentDocument != null && currentDocument.isStored());
+	boolean etagSame = false;
+	if (currentDocument != null && currentDocument.getEtag() != null) {
+      etagSame = currentDocument.getEtag().equals(doc.getEtag());
+	}
     currentDocument = doc;
     header.setTitle(doc.getTitle());
-    Window.setTitle(doc.getTitle() + " - LaTeX Lab");
+    Window.setTitle(doc.getTitle() + " - GDBE");
     if (currentDocument.isStored()) {
       header.setInfo(currentDocument.getDocumentId(), currentDocument.getEdited(), currentDocument.getEditor());
+      if (!wasStored) {
+        History.newItem(doc.getDocumentId());
+      } else {
+	    if (etagSame) {
+          if(etagSame && requireNewEtag) {
+    	    new Timer() {
+	            @Override
+		        public void run() {
+		          execute(new CurrentDocumentRefreshCommand(true, null));
+		        }
+            }.schedule(2000);
+          }
+	    }
+      }
     }
   }
   
