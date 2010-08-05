@@ -2,6 +2,7 @@ package com.google.gdbe.server.auth;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.security.GeneralSecurityException;
 import java.util.Enumeration;
@@ -69,6 +70,7 @@ public class AuthenticationManager extends HttpServlet {
           token = AuthSubUtil.getTokenFromReply(qs);
         }
         if (token != null && !token.equals("")) {
+          token = URLDecoder.decode(token, "UTF-8");
           token = AuthSubUtil.exchangeForSessionToken(token, null);
           store.setUserToken(req.getUserPrincipal().getName(), token);
           resp.sendRedirect(getFullUrl(req));
